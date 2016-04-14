@@ -5,7 +5,7 @@
 	<artifactId>zkMethodTemplateRefFormBinding</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
-		<zk.version>8.0.0</zk.version>
+		<zk.version>8.0.1-Eval</zk.version>
 		<commons-io>2.4</commons-io>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}-FL-${maven.build.timestamp}</packname>
@@ -22,14 +22,16 @@
 	</licenses>
 	<repositories>
 		<repository>
-			<id>ZK CE</id>
-			<name>ZK CE Repository</name>
+			<id>ZK EE</id>
+			<url>https://maven.zkoss.org/repo/zk/ee</url>
+		</repository>
+		<repository>
+			<id>zk repository</id>
 			<url>http://mavensync.zkoss.org/maven2</url>
 		</repository>
 		<repository>
-			<id>ZK EVAL</id>
-      		<name>ZK Evaluation Repository</name>
-			<url>http://mavensync.zkoss.org/eval</url>
+			<id>ZK EE Evaluation</id>
+			<url>http://mavensync.zkoss.org/zk/ee-eval</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
@@ -41,8 +43,18 @@
 	</pluginRepositories>
 	<dependencies>
 		<dependency>
+			<groupId>org.zkoss.common</groupId>
+			<artifactId>zweb</artifactId>
+			<version>${zk.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.zkoss.zk</groupId>
-			<artifactId>zkbind</artifactId>
+			<artifactId>zk</artifactId>
+			<version>${zk.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.zkoss.zk</groupId>
+			<artifactId>zhtml</artifactId>
 			<version>${zk.version}</version>
 		</dependency>
 		<dependency>
@@ -52,15 +64,15 @@
 		</dependency>
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
-			<artifactId>zkplus</artifactId>
+			<artifactId>zkbind</artifactId>
 			<version>${zk.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
-			<artifactId>zhtml</artifactId>
+			<artifactId>zkex</artifactId>
 			<version>${zk.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
@@ -89,8 +101,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 			<!-- Build war -->

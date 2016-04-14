@@ -1,0 +1,14 @@
+<zk>
+	<listbox model="@load(bean.strings)" hflex="1" vflex="1">
+		<template name="model">
+			<listitem>
+				<listcell>
+					<label value="@load(each)" />
+				</listcell>
+				<listcell>
+					<textbox value="@bind(bean.getSubSubBean(each).value)" hflex="1" />
+				</listcell>
+			</listitem>
+		</template>
+	</listbox>
+</zk>
